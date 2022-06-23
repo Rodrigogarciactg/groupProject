@@ -1,0 +1,43 @@
+[REQUIRED] Name: Paige Milosevic, Omar Ochoa, Rodrigo Garcia, David Cogbill
+[REQUIRED] Project Title: ClickBate 
+[REQUIRED] Project Stack: MERN
+[REQUIRED] GitHub Repo Link: https://github.com/Rodrigogarciactg/groupProject.git
+
+[REQUIRED] Project Description: Online shop for posting things you are trying to sell and buying 
+what someone else is selling
+
+[REQUIRED] New Programming Concept(s) I'm Planning to Learn: 
+
+Week 1 Features (to show at Review during Week 2)
+- Create Items
+- Read Items
+- Update Items
+- Delete Items
+- Components (Making Forms & Updates)
+- Create Routes 
+
+Week 2 Features (to show at first office hour/lecture of Week 3)
+- ***Finish CSS***
+
+Product Backlog (If I have more time after completing my MVP, I'll start to work on...)
+- Possibly includes Login & Registration Page
+- Upload image file & view it under item view
+
+
+
+Other Week 1 Tasks
+- Reply to Group Preferences Email
+- Schedule a Review during Week 2 (https://calendly.com/d/cnc-5t7-4yv/solo-project-sprint-w1-review)
+- Create GitHub repo for project 
+- Create a .gitignore file for my project for my GitHub repo (enter in React, Python, or Java at https://www.toptal.com/developers/gitignore)
+- Finish this completed txt file and create project wireframe using Balsamiq (https://balsamiq.com/wireframes/) [Drawings and other wireframe programs also accepted!]
+- Email Zack this completed txt file, and project wireframe for approval
+- Submit completed wireframe on platform (https://login.codingdojo.com/m/97/6237/44911)
+
+
+Other Week 2 Tasks
+- Schedule my time for my presentation (https://docs.google.com/spreadsheets/d/1h44-JSv6npmdqAftZHxLcX2FRDlSKEzEZlTOlizIGfw/edit#gid=414986054)
+
+
+
+
