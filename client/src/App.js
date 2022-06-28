@@ -6,11 +6,17 @@ import EditItem from "./components/EditItem";
 import SellPage from "./components/SellPage";
 import ItemForm from "./components/ItemForm";
 import ViewItem from "./components/ViewItem";
+import Typography from "@mui/material/Typography";
 
 function App() {
   return (
     <div className="App">
-      <h1> ClickBait</h1>
+      <Typography variant="h1" component="div" gutterBottom>
+        ClickBait
+      </Typography>
+      <Typography variant="h4" component="div" gutterBottom>
+        Sell and Buy Fishing Gear!!
+      </Typography>
 
       <BrowserRouter>
         <Routes>
