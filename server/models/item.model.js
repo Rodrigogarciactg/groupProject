@@ -11,25 +11,10 @@ const ItemsSchema = {
     required: [true, "type is required"],
   },
   seller: {
-    type: String,
-    required: [true, "description is required"],
-    minLength: [3, "Type must be at least 3 characters"],
+    type: mongoose.Schema.Types.ObjectId,
+    //Changed the seller to the reference to a User
+    ref: "User",
   },
-  // skill1: {
-  //     type: String,
-  //     required: [true, "type is required"],
-  //     minLength: [3, "Type must be at least 3 characters"],
-  // },
-  // skill2: {
-  //     type: String,
-  //     required: [true, "type is required"],
-  //     minLength: [3, "Type must be at least 3 characters"],
-  // },
-  // skill3: {
-  //     type: String,
-  //     required: [true, "type is required"],
-  //     minLength: [3, "Type must be at least 3 characters"],
-  // },
 };
 
 module.exports = mongoose.model("Item", ItemsSchema);

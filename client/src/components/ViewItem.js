@@ -1,24 +1,23 @@
-import React from "react";
 import axios from "axios";
+import React from 'react';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import CardActionArea from "@mui/material/CardActionArea";
 
 // import DeleteItem from './DeleteItem';
 
 const ViewItem = (props) => {
-  const [items, setItems] = useState({});
+  const [items, setItems] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
 
   console.log(id);
   useEffect(() => {
+    console.log("Line 22");
     axios
       .get("http://localhost:8000/api/item/" + id)
       .then((response) => {
@@ -28,7 +27,7 @@ const ViewItem = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [items]);
   const handleDeleteitem = (idFromBelow) => {
     axios
       .delete(`http://localhost:8000/api/item/${idFromBelow}`)

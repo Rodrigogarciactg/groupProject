@@ -63,10 +63,10 @@ const Dashboard = () => {
   // export default function CustomizedTables() {
   return (
     <div>
-      <div class="header-display-all">
+      <div className="header-display-all">
         {/* <h1 class="main-title">Sell and buy Fishing Gear!!</h1> */}
 
-        <button class="add-item-btn">
+        <button className="add-item-btn">
           <Link to="/edit" className="link-style">
             Edit item
           </Link>
@@ -97,7 +97,7 @@ const Dashboard = () => {
                   </StyledTableCell>
                 </Link>
                 <StyledTableCell align="right">{item.price}</StyledTableCell>
-                <StyledTableCell align="right">{item.seller}</StyledTableCell>
+                <StyledTableCell align="right">{item.seller.username}</StyledTableCell>
                 <StyledTableCell align="right">
                   {/* <Link to={`/sell/${item._id}`}>
                     <button className="btn btn-primary">Sell/Buy</button>

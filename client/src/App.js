@@ -1,11 +1,12 @@
 import "./App.css";
-import React from "react";
+import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import EditItem from "./components/EditItem";
 import SellPage from "./components/SellPage";
 import ItemForm from "./components/ItemForm";
 import ViewItem from "./components/ViewItem";
+import Auth from "./components/Auth";
 import Typography from "@mui/material/Typography";
 
 function App() {
@@ -17,10 +18,10 @@ function App() {
       <Typography variant="h4" component="div" gutterBottom>
         Sell and Buy Fishing Gear!!
       </Typography>
-
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Auth />} />
+          <Route path="/dash" element={<Dashboard />} />
           <Route path="/item/:id" element={<ViewItem />} />
           <Route path="/itemform" element={<ItemForm />} />
           <Route path="/sell/:id" element={<SellPage />} />

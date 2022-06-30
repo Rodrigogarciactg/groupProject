@@ -1,4 +1,5 @@
 const Item = require("../models/item.model");
+const User = require('../models/user.model');
 
 const createItem = (req, res) => {
   Item.create(req.body)
@@ -11,9 +12,26 @@ const createItem = (req, res) => {
 };
 
 const getAllItems = (req, res) => {
-  Item.find()
+  Item.find().populate('seller', 'username')
     .then((allItems) => {
       res.json(allItems);
+    })
+    .catch((err) => {
+      res.status(400).json({ err });
+    });
+};
+
+//Added new function to the item controller
+const getItemsByUser = (req, res) => {
+  User.findOne({ username: req.params.username })
+    .then ((user) => {
+      Item.find({ seller: user._id })
+        .then((allItems) => {
+          res.json(allItems);
+        })
+        .catch((err) => {
+          res.status(400).json({ err });
+        })
     })
     .catch((err) => {
       res.status(400).json({ err });
@@ -23,6 +41,7 @@ const getAllItems = (req, res) => {
 const getOneItem = (req, res) => {
   Item.findOne({ _id: req.params.id })
     .then((queriedItem) => {
+      console.log(queriedItem);
       res.json(queriedItem);
     })
     .catch((err) => {
@@ -57,6 +76,7 @@ module.exports = {
   createItem,
   getOneItem,
   getAllItems,
+  getItemsByUser,
   updateItem,
   deleteItem,
 };
