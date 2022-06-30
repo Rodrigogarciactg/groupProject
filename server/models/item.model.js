@@ -1,40 +1,31 @@
-const { Double } = require('bson');
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const ItemSchema = new mongoose.Schema({
-    itemName: {
-        type: String,
-        required: [
-            true, 'Item name is required'
-        ]
-    },
+const ItemsSchema = {
+  userId: {
+    type: 
+  },
+  
+  item: {
+    type: String,
+    required: [true, "Item name is required"],
+    minLength: [3, "Item Name must be at least 3 characters"],
+  },
+  price: {
+    type: String,
+    required: [true, "Price is required"],
+  },
+  seller: {
+    type: String,
+    required: [true, "Seller name is required"],
+    minLength: [2, "Seller name must be at least 3 characters"],
+  },
 
-    price: {
-        type: Number,
-        required: [
-            true, 'Price is required'
-        ]
-    },
+};
 
-    sellerName: {
-        type: String,
-        required: [
-            true, 'Seller Name is required'
-        ]
-    },
-
-    description: {
-        type: String,
-        required: [
-            true, 'Description is required'
-        ]
-    },
-
-    venmoHandle: {
-        type: String
-    }
+const User = {
 
 
-}, {timestamps: true});
+  
+}
 
-module.exports = mongoose.model('Item', ItemSchema);
+module.exports = mongoose.model("Item", ItemsSchema);
