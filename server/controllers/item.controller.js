@@ -1,4 +1,5 @@
 const Item = require("../models/item.model");
+const User = require("../models/user.model");
 
 const createItem = (req, res) => {
   Item.create(req.body)
@@ -54,10 +55,28 @@ const updateItem = (req, res) => {
     });
 };
 
+const getItemByUserID = (req, res) => {
+  User.findOne({userName: req.params.userName})
+    .then((user) => {
+        Item.find({ createdBy: user._id}).populate('createdBy', 'userName email')
+          .then((item) => {
+              res.json(item)
+          })
+          .catch((err) => {
+              res.status(400).json({ message: 'Something went wrong in item:findByUser', error: err });
+          })
+  })
+  .catch((err) => {
+      res.status(400).json({ message: 'Something went wrong in user:findOne', error: err });
+  })
+};
+
+
 module.exports = {
   createItem,
   getOneItem,
   getAllItems,
   updateItem,
   deleteItem,
+  getItemByUserID,
 };

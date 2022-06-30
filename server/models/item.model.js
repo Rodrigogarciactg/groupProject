@@ -1,10 +1,7 @@
 const mongoose = require("mongoose");
 
 const ItemsSchema = {
-  userId: {
-    type: 
-  },
-  
+
   item: {
     type: String,
     required: [true, "Item name is required"],
@@ -20,12 +17,17 @@ const ItemsSchema = {
     minLength: [2, "Seller name must be at least 3 characters"],
   },
 
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  }
+
 };
 
 const User = {
 
 
-  
+
 }
 
 module.exports = mongoose.model("Item", ItemsSchema);
